@@ -36,7 +36,7 @@ jobs:
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
         with:
           html_path: dist/Web/wwwroot/index.html
-          base_href: /BlazorOnGitHubPages/
+          base_href: /portfolio/
 
       - name: Commit wwwroot to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
