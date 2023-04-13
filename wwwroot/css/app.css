@@ -4,26 +4,70 @@
   line-height: 24px;
   font-weight: 400;
 
-  color: #0f0f0f;
-  background-color: #f6f6f6;
+  color: #f6f6f6;
+  background-color: #000000;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1:focus {
+/* h1:focus {
   outline: none;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#about-me {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+figure {
+  height: 1800px;
+  width: 1000px;
+  /* overflow: hidden; */
+  /* display: flex;
+  justify-content: center; */
+}
+
+/* Mobile styles */
+/* @media (min-width: 0px) and (max-width: 600px) {
+  section {
+    padding: 20px;
+  }
+} */
+
+/* Desktop styles */
+/* @media (min-width: 601px) {
+  section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+} */
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     color: #f6f6f6;
     background-color: #2f2f2f;
   }
-}
+} */
 
-#blazor-error-ui {
+/* #blazor-error-ui {
   background: lightyellow;
   bottom: 0;
   box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
@@ -52,4 +96,4 @@ h1:focus {
 
 .blazor-error-boundary::after {
   content: "An error has occurred.";
-}
+} */
