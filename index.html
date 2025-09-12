@@ -1,11 +1,34 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
     <title>Portfolio</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Filip Forsström — portfolio for code and audio projects.">
     <style type="text/css">
+        /* Increase base font for better readability on mobile & desktop */
+        html,
+        body {
+            font-size: 18px;
+            /* comfortable default for most devices */
+            line-height: 1.45;
+            -webkit-text-size-adjust: 100%;
+            /* avoid iOS auto-scaling smaller */
+        }
+
+        /* Smooth anchor scrolling with reduced-motion respect */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
         /* Default (light) colors to mirror old-school attributes */
         body {
             background: #FFFFFF;
@@ -24,10 +47,97 @@
             color: #FF0000;
         }
 
+        /* Always show a clear focus indicator */
+        :focus-visible {
+            outline: 3px solid #ffab00;
+            outline-offset: 2px;
+        }
+
         hr {
             border: 0;
             height: 1px;
             background: #CCCCCC;
+        }
+
+        /* Modern utility classes to replace legacy <font> tags and size attributes */
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 12px 48px;
+            text-align: left;
+        }
+
+        footer.container {
+            text-align: center;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        /* font families */
+        .font-sans {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .font-mono {
+            font-family: "Courier New", monospace;
+        }
+
+        /* sizes (based on html font-size: 18px) */
+        .size-xl {
+            font-size: 1.5556rem;
+            /* 28px */
+            font-weight: 700;
+        }
+
+        .size-base {
+            font-size: 1rem;
+        }
+
+        .size-sm {
+            font-size: 0.8889rem;
+            /* 16px */
+        }
+
+        .size-xs {
+            font-size: 0.7778rem;
+            /* 14px */
+        }
+
+        /* Ensure lists inside the flex columns are left-aligned and have consistent indentation */
+        .grid>div {
+            text-align: left;
+        }
+
+        ul {
+            padding-left: 1.25rem;
+            /* consistent bullet indentation */
+            margin: 0.5rem 0;
+            text-align: left;
+            /* make wrapped lines align under the first line */
+        }
+
+        /* Layout helpers */
+        .stack>*+* {
+            margin-top: 12px;
+        }
+
+        /* Section grid for code/audio columns */
+        .grid {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .grid>div {
+            flex: 1;
+            min-width: 240px;
+        }
+
+        [id] {
+            scroll-margin-top: 16px;
         }
 
         /* System dark mode */
@@ -60,69 +170,56 @@
     </style>
 </head>
 
-<body bgcolor="#FFFFFF" text="#000000" link="#0000EE" vlink="#551A8B" alink="#FF0000">
-    <center>
-        <br>
-        <font face="Verdana, Arial, Helvetica" size="+2"><b>Filip Forsström</b></font><br>
-        <font face="Courier New, monospace" size="-1">code &nbsp;•&nbsp; audio</font>
-        <br><br>
+<body>
 
-        <hr width="640" noshade>
+    <header class="container centered" role="banner">
+        <h1 class="font-sans size-xl" style="margin: 24px 0 0">Filip Forsström</h1>
+        <nav aria-label="Primary">
+            <ul class="font-sans size-sm"
+                style="list-style:none; padding:0; margin:0; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#code">Code</a></li>
+                <li><a href="#audio">Audio</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <table width="640" cellpadding="6" cellspacing="0" border="0">
-            <tr>
-                <td align="left">
-                    <font face="Verdana, Arial, Helvetica" size="-1">
-                        Hi
-                    </font>
-                </td>
-            </tr>
-        </table>
+    <main id="main-content" class="container">
+        <hr aria-hidden="true" role="presentation">
 
-        <hr width="640" noshade>
+        <section id="intro" aria-labelledby="intro-title" class="stack">
+            <p class="font-sans size-sm">Hi</p>
+        </section>
 
-        <table width="640" cellpadding="6" cellspacing="0" border="0">
-            <tr>
-                <td valign="top" width="50%" align="left">
-                    <font face="Verdana, Arial, Helvetica" size="-1">
-                        <b>code</b>
-                        <ul>
-                            <li>
-                                <a href="#" title="Replace with your repo URL">project-alpha</a>
-                                — tiny CLI utility
-                            </li>
-                            <li>
-                                <a href="#" title="Replace with your repo URL">project-beta</a>
-                                — small web experiment
-                            </li>
-                        </ul>
-                    </font>
-                </td>
-                <td valign="top" width="50%" align="left">
-                    <font face="Verdana, Arial, Helvetica" size="-1">
-                        <b>audio</b>
-                        <ul>
-                            <li>
-                                <a href="#" title="Replace with your Bandcamp/album link">bandcamp</a>
-                                — releases & albums
-                            </li>
-                            <li>
-                                <a href="#" title="Replace with your SoundCloud/profile link">soundcloud</a>
-                                — singles & drafts
-                            </li>
-                        </ul>
-                    </font>
-                </td>
-            </tr>
-        </table>
+        <hr aria-hidden="true" role="presentation">
 
-        <hr width="640" noshade>
+        <section id="catalog" class="grid" aria-label="Work">
+            <div id="code" aria-labelledby="code-title">
+                <h2 id="code-title" class="font-sans size-sm" style="margin:0"><strong>code</strong></h2>
+                <ul class="font-sans size-sm">
+                    <li><a href="https://github.com/filipforsstrom/chord-buffer">chord buffer</a> — synthesizer</li>
+                    <li><a
+                            href="https://github.com/filipforsstrom/pico-serial-to-wifi-bridge">pico-serial-to-wifi-bridge</a>
+                        — bidirectional UART to TCP bridge</li>
+                </ul>
+            </div>
+            <div id="audio" aria-labelledby="audio-title">
+                <h2 id="audio-title" class="font-sans size-sm" style="margin:0"><strong>audio</strong></h2>
+                <ul class="font-sans size-sm">
+                    <li><a href="https://ljudvagg.bandcamp.com">piano</a> — ljudvägg</li>
+                    <li><a href="https://harkecult.bandcamp.com/album/baronen">mandolin</a> — härke</li>
+                    <li><a href="https://youtube.com/@ljudvagg">youtube</a> — live performances &amp; demo videos</li>
+                </ul>
+            </div>
+        </section>
 
-        <font face="Courier New, monospace" size="-2">
-            last updated: September 12, 2025
-        </font>
-        <br><br>
-    </center>
+        <hr aria-hidden="true" role="presentation">
+    </main>
+
+    <footer class="container" role="contentinfo">
+        <p class="font-mono size-xs" style="margin: 16px 0 0">last updated: <time datetime="2025-09-12">September 12,
+                2025</time></p>
+    </footer>
 
 </body>
 
